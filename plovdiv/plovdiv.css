@@ -1,0 +1,55 @@
+@font-face {
+  font-family: "Plovdiv Display";
+  src: url("https://lokrain.github.io/fonts/plovdiv/PlovdivDisplay-Regular.otf")
+    format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Plovdiv Display Bold";
+  src: url("https://lokrain.github.io/fonts/plovdiv/PlovdivDisplay-Bold.otf")
+    format("opentype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Plovdiv Display Light";
+  src: url("https://lokrain.github.io/fonts/plovdiv/PlovdivDisplay-Light.otf")
+    format("opentype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Plovdiv Sans";
+  src: url("https://lokrain.github.io/fonts/plovdiv/PlovdivSans.otf")
+    format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Plovdiv Maina";
+  src: url("https://lokrain.github.io/fonts/plovdiv/PlovdivMainaMode.otf")
+    format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Plovdiv Script";
+  src: url("https://lokrain.github.io/fonts/plovdiv/PlovdivScript.otf")
+    format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Plovdiv Pictograms";
+  src: url("https://lokrain.github.io/fonts/plovdiv/PlovdivPictograms.otf")
+    format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
