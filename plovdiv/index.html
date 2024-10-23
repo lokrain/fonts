@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="bg">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Цената Включва</title>
+    <!-- Link to the custom CSS file hosted on GitHub Pages -->
+    <link
+      rel="stylesheet"
+      href="https://lokrain.github.io/fonts/plovdiv/plovdiv.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.0"
+    />
+    <style>
+      body {
+        font-family: "Plovdiv Sans", system-ui, sans-serif;
+      }
+    </style>
+  </head>
+  <body class="p-8">
+    <div class="max-w-xl mx-auto">
+      <h1 class="text-2xl font-bold mb-4">Цената Включва</h1>
+      <ul class="text-lg">
+        <li>Самолетен билет София - Маскат - София</li>
+        <li>Летищни такси</li>
+        <li>Посрещане на летището от представител на фирмата</li>
+        <li>Трансфер летище – хотел – летище</li>
+        <li>5 нощувки на съответната база в избран хотел</li>
+        <li>Обиколна на Маскат</li>
+        <li>Обиколка на Низва</li>
+      </ul>
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const fontsToCheck = [
+          { name: "Plovdiv Display", weight: "400", style: "normal" },
+          { name: "Plovdiv Display Bold", weight: "700", style: "normal" },
+          { name: "Plovdiv Display Light", weight: "300", style: "normal" },
+          { name: "Plovdiv Sans", weight: "400", style: "normal" },
+          { name: "Plovdiv Maina", weight: "400", style: "normal" },
+          { name: "Plovdiv Script", weight: "400", style: "normal" },
+          { name: "Plovdiv Pictograms", weight: "400", style: "normal" },
+        ];
+
+        fontsToCheck.forEach((font) => {
+          const isFontLoaded = document.fonts.check(
+            `1em ${font.name}`,
+            font.weight,
+            font.style
+          );
+          console.log(
+            `Font "${font.name}" (weight: ${font.weight}, style: ${font.style}): `,
+            isFontLoaded ? "Loaded" : "Not Loaded"
+          );
+          if (!isFontLoaded) {
+            console.warn(
+              `Warning: Font "${font.name}" did not load properly. Please verify the URL and server configuration.`
+            );
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
