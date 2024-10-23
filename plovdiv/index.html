@@ -3,63 +3,495 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Цената Включва</title>
-    <!-- Link to the custom CSS file hosted on GitHub Pages -->
+    <title>Презентация на Типографията</title>
     <link
       rel="stylesheet"
-      href="https://lokrain.github.io/fonts/plovdiv/plovdiv.css"
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@^3.0/dist/tailwind.min.css"
     />
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/tailwindcss@3.4.0"
+      href="https://cdn.jsdelivr.net/npm/@tailwindcss/typography@^0.5.2/dist/typography.min.css"
     />
     <style>
+      @font-face {
+        font-family: "Plovdiv Display";
+        src: url("https://lokrain.github.io/fonts/plovdiv/PlovdivDisplay-Regular.otf")
+          format("opentype");
+        font-weight: 400;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: "Plovdiv Display Bold";
+        src: url("https://lokrain.github.io/fonts/plovdiv/PlovdivDisplay-Bold.otf")
+          format("opentype");
+        font-weight: 700;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: "Plovdiv Display Light";
+        src: url("https://lokrain.github.io/fonts/plovdiv/PlovdivDisplay-Light.otf")
+          format("opentype");
+        font-weight: 300;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: "Plovdiv Sans";
+        src: url("https://lokrain.github.io/fonts/plovdiv/PlovdivSans.otf")
+          format("opentype");
+        font-weight: 400;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: "Plovdiv Maina";
+        src: url("https://lokrain.github.io/fonts/plovdiv/PlovdivMainaMode.otf")
+          format("opentype");
+        font-weight: 400;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: "Plovdiv Script";
+        src: url("https://lokrain.github.io/fonts/plovdiv/PlovdivScript.otf")
+          format("opentype");
+        font-weight: 400;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: "Plovdiv Pictograms";
+        src: url("https://lokrain.github.io/fonts/plovdiv/PlovdivPictograms.otf")
+          format("opentype");
+        font-weight: 400;
+        font-style: normal;
+      }
+
       body {
-        font-family: "Plovdiv Sans", system-ui, sans-serif;
+        font-family: "Plovdiv Display", Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        background-color: #f0f0f0;
+        color: #333;
+        line-height: 1.6;
+      }
+
+      .container {
+        display: flex;
+        max-width: 1600px;
+        margin: 2rem auto;
+        padding: 0;
+        border-radius: 8px;
+      }
+
+      .sidebar {
+        width: 25%;
+        padding-right: 1rem;
+        border-right: 1px solid #e0e0e0;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        overflow-y: auto;
+        background: #fff;
+        padding: 2rem;
+      }
+
+      .content {
+        width: 70%;
+        padding: 2rem;
+        margin-left: 30%;
+        min-height: 100vh;
+        box-sizing: border-box;
+      }
+
+      .card {
+        padding: 2rem;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        margin-bottom: 2rem;
+        background: #ffffff;
+        width: calc(100% - 2rem);
+        box-sizing: border-box;
+      }
+
+      input[type="range"] {
+        width: 80%;
+        margin-bottom: 1rem;
+      }
+
+      .range-value {
+        display: inline-block;
+        width: 20%;
+        text-align: right;
+        font-weight: bold;
+      }
+
+      .toolbar {
+        margin-bottom: 1rem;
+      }
+
+      .toolbar button,
+      .toolbar select {
+        padding: 0.5rem;
+        margin-right: 0.5rem;
+        background-color: #e0e0e0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      .toolbar button:hover,
+      .toolbar select:hover {
+        background-color: #c0c0c0;
+      }
+
+      .toolbar button.active {
+        background-color: #999;
+      }
+
+      .bold {
+        font-weight: bold;
+      }
+
+      .italic {
+        font-style: italic;
+      }
+
+      .underline {
+        text-decoration: underline;
+      }
+
+      .strike {
+        text-decoration: line-through;
+      }
+
+      .selected-element {
+        outline: 2px solid #00f;
       }
     </style>
   </head>
-  <body class="p-8">
-    <div class="max-w-xl mx-auto">
-      <h1 class="text-2xl font-bold mb-4">Цената Включва</h1>
-      <ul class="text-lg">
-        <li>Самолетен билет София - Маскат - София</li>
-        <li>Летищни такси</li>
-        <li>Посрещане на летището от представител на фирмата</li>
-        <li>Трансфер летище – хотел – летище</li>
-        <li>5 нощувки на съответната база в избран хотел</li>
-        <li>Обиколна на Маскат</li>
-        <li>Обиколка на Низва</li>
-      </ul>
-    </div>
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-        const fontsToCheck = [
-          { name: "Plovdiv Display", weight: "400", style: "normal" },
-          { name: "Plovdiv Display Bold", weight: "700", style: "normal" },
-          { name: "Plovdiv Display Light", weight: "300", style: "normal" },
-          { name: "Plovdiv Sans", weight: "400", style: "normal" },
-          { name: "Plovdiv Maina", weight: "400", style: "normal" },
-          { name: "Plovdiv Script", weight: "400", style: "normal" },
-          { name: "Plovdiv Pictograms", weight: "400", style: "normal" },
-        ];
+  <body class="antialiased">
+    <div class="container">
+      <div class="sidebar">
+        <h2 class="text-xl font-bold mb-4">Настройки на Типографията</h2>
+        <label for="font-selector">Изберете шрифт:</label>
+        <select id="font-selector">
+          <option value="Plovdiv Display">Plovdiv Display</option>
+          <option value="Plovdiv Display Bold">Plovdiv Display Bold</option>
+          <option value="Plovdiv Display Light">Plovdiv Display Light</option>
+          <option value="Plovdiv Sans">Plovdiv Sans</option>
+          <option value="Plovdiv Maina">Plovdiv Maina</option>
+          <option value="Plovdiv Script">Plovdiv Script</option>
+          <option value="Plovdiv Pictograms">Plovdiv Pictograms</option>
+        </select>
 
-        fontsToCheck.forEach((font) => {
-          const isFontLoaded = document.fonts.check(
-            `1em ${font.name}`,
-            font.weight,
-            font.style
-          );
-          console.log(
-            `Font "${font.name}" (weight: ${font.weight}, style: ${font.style}): `,
-            isFontLoaded ? "Loaded" : "Not Loaded"
-          );
-          if (!isFontLoaded) {
-            console.warn(
-              `Warning: Font "${font.name}" did not load properly. Please verify the URL and server configuration.`
+        <label for="font-size-slider"
+          >Размер на шрифта (0.25rem - 7rem):
+          <span id="font-size-value">1.5rem</span></label
+        >
+        <input
+          type="range"
+          id="font-size-slider"
+          min="0.25"
+          max="7"
+          step="0.1"
+          value="1.5"
+        />
+
+        <label for="letter-spacing-slider"
+          >Множител за разстояние между буквите (0 - 5):
+          <span id="letter-spacing-value">1.0px</span></label
+        >
+        <input
+          type="range"
+          id="letter-spacing-slider"
+          min="0"
+          max="5"
+          step="0.1"
+          value="1"
+        />
+
+        <label for="line-height-slider"
+          >Височина на линията (1 - 3):
+          <span id="line-height-value">1.6</span></label
+        >
+        <input
+          type="range"
+          id="line-height-slider"
+          min="1"
+          max="3"
+          step="0.1"
+          value="1.6"
+        />
+
+        <label for="font-weight-slider"
+          >Тегло на шрифта (100 - 1000):
+          <span id="font-weight-value">400</span></label
+        >
+        <input
+          type="range"
+          id="font-weight-slider"
+          min="100"
+          max="1000"
+          step="100"
+          value="400"
+        />
+
+        <div class="toolbar">
+          <button id="italic-btn">Italic</button>
+          <button id="underline-btn">Underline</button>
+          <button id="strike-btn">Strike</button>
+        </div>
+      </div>
+
+      <div class="content">
+        <article class="card prose" id="font-card" data-configurable="true">
+          <h1 class="font-bold text-4xl" data-configurable="true">
+            Заглавие на Статията
+          </h1>
+          <h2 class="font-semibold text-3xl mt-4" data-configurable="true">
+            Основна Тема на Статията
+          </h2>
+          <blockquote
+            class="border-l-4 border-gray-300 pl-4 italic text-lg my-4"
+            data-configurable="true"
+          >
+            „Цитат, който подчертава важна идея, илюстрира силата на
+            типографията в статията.”
+          </blockquote>
+          <h3 class="font-semibold text-2xl mt-4" data-configurable="true">
+            Подзаглавие на Секцията
+          </h3>
+          <h3 class="font-semibold text-xl mt-2" data-configurable="true">
+            Допълнителна Информация
+          </h3>
+          <p class="text-sm text-gray-600 mt-1" data-configurable="true">
+            Описание на категорията или секцията с по-малки букви, за да се
+            подчертае значението или допълнителната информация.
+          </p>
+          <p data-configurable="true">
+            <strong>Бързият кафяв лисицата</strong> прескача мързеливото куче.
+            Това е примерен параграф на български език, който показва как
+            изглежда текстът в този шрифт и с избраните настройки за разстояние
+            и височина на линията.
+          </p>
+          <p data-configurable="true">
+            Типографията играе ключова роля в дизайна на съдържание, като
+            придава уникалност и стил на визуалния облик на даден текст.
+            Различните параметри като <strong>шрифт</strong>,
+            <em>размер на шрифта</em>, <u>разстояние между буквите</u> и
+            височина на линията допринасят за цялостното възприятие и четимост.
+          </p>
+          <p data-configurable="true">
+            Експериментирането с различни шрифтове и параметри помага на
+            дизайнерите да намерят перфектното съчетание за своя проект и да
+            осигурят максимален комфорт при четене за потребителите.
+          </p>
+          <ul>
+            <li data-configurable="true">
+              <strong>Първа точка от списъка:</strong> Обяснение на първата
+              точка с подробности.
+            </li>
+            <li data-configurable="true">
+              <em>Втора точка от списъка:</em> Описание на втората точка с
+              различен стил.
+            </li>
+            <li data-configurable="true">
+              <u>Трета точка от списъка:</u> Точка със специално подчертаване.
+            </li>
+          </ul>
+        </article>
+      </div>
+    </div>
+
+    <script>
+      const fontSelector = document.getElementById("font-selector");
+      const fontSizeSlider = document.getElementById("font-size-slider");
+      const letterSpacingSlider = document.getElementById(
+        "letter-spacing-slider"
+      );
+      const lineHeightSlider = document.getElementById("line-height-slider");
+      const fontWeightSlider = document.getElementById("font-weight-slider");
+      const fontSizeValue = document.getElementById("font-size-value");
+      const letterSpacingValue = document.getElementById(
+        "letter-spacing-value"
+      );
+      const lineHeightValue = document.getElementById("line-height-value");
+      const fontWeightValue = document.getElementById("font-weight-value");
+      let selectedElement = null;
+      const selectedElementStyles = new Map();
+
+      document
+        .querySelectorAll('[data-configurable="true"]')
+        .forEach((element) => {
+          element.style.fontFamily = "Plovdiv Display";
+          element.addEventListener("click", (event) => {
+            event.stopPropagation();
+            if (selectedElement) {
+              selectedElement.classList.remove("selected-element");
+              console.log("Deselected element:", selectedElement);
+            }
+            selectedElement = element;
+            selectedElement.classList.add("selected-element");
+            console.log("Selected element:", selectedElement);
+
+            // Remember styles for the selected element
+            if (!selectedElementStyles.has(selectedElement)) {
+              selectedElementStyles.set(selectedElement, {
+                fontFamily:
+                  selectedElement.style.fontFamily || "Plovdiv Display",
+                fontSize: selectedElement.style.fontSize || "1.5rem",
+                letterSpacing: selectedElement.style.letterSpacing || "0px",
+                lineHeight: selectedElement.style.lineHeight || "1.5",
+                fontWeight: selectedElement.style.fontWeight || "400",
+              });
+            }
+            console.log(
+              "Remembered styles:",
+              selectedElementStyles.get(selectedElement)
             );
-          }
+
+            // Update the sidebar controls to match the selected element's styles
+            const computedStyle = window.getComputedStyle(selectedElement);
+            fontSelector.value = computedStyle.fontFamily
+              .split(",")[0]
+              .replace(/"/g, "");
+            fontSizeSlider.value = parseFloat(computedStyle.fontSize) || 1.5;
+            fontSizeValue.textContent = fontSizeSlider.value + "rem";
+            letterSpacingSlider.value =
+              parseFloat(computedStyle.letterSpacing) || 0;
+            letterSpacingValue.textContent = letterSpacingSlider.value + "px";
+
+            // Handle line height correctly, fallback to default if it's 'normal'
+            const lineHeight = computedStyle.lineHeight;
+            lineHeightSlider.value =
+              lineHeight === "normal" || isNaN(parseFloat(lineHeight))
+                ? 1.5
+                : parseFloat(lineHeight);
+            lineHeightValue.textContent = lineHeightSlider.value;
+
+            fontWeightSlider.value = computedStyle.fontWeight;
+            fontWeightValue.textContent = fontWeightSlider.value;
+
+            // Update toolbar buttons to reflect text styles
+            document
+              .getElementById("italic-btn")
+              .classList.toggle("active", computedStyle.fontStyle === "italic");
+            document
+              .getElementById("underline-btn")
+              .classList.toggle(
+                "active",
+                computedStyle.textDecoration.includes("underline")
+              );
+            document
+              .getElementById("strike-btn")
+              .classList.toggle(
+                "active",
+                computedStyle.textDecoration.includes("line-through")
+              );
+          });
         });
+
+      document.addEventListener("click", (event) => {
+        if (
+          selectedElement &&
+          !event.target.closest("[data-configurable='true']")
+        ) {
+          selectedElement.classList.remove("selected-element");
+          selectedElement = null;
+          console.log("Deselected all elements");
+        }
+      });
+
+      function applyStyleToElement(styleProperty, value) {
+        if (selectedElement) {
+          console.log(
+            `Applying ${styleProperty}: ${value} to`,
+            selectedElement
+          );
+          selectedElement.style[styleProperty] = value;
+          selectedElementStyles.get(selectedElement)[styleProperty] = value;
+          console.log(
+            "Updated styles:",
+            selectedElementStyles.get(selectedElement)
+          );
+        }
+      }
+
+      fontSelector.addEventListener("change", (event) => {
+        applyStyleToElement("fontFamily", event.target.value);
+      });
+
+      fontSizeSlider.addEventListener("input", (event) => {
+        applyStyleToElement("fontSize", event.target.value + "rem");
+        fontSizeValue.textContent = event.target.value + "rem";
+      });
+
+      letterSpacingSlider.addEventListener("input", (event) => {
+        applyStyleToElement("letterSpacing", event.target.value + "px");
+        letterSpacingValue.textContent = event.target.value + "px";
+      });
+
+      lineHeightSlider.addEventListener("input", (event) => {
+        applyStyleToElement("lineHeight", event.target.value);
+        lineHeightValue.textContent = event.target.value;
+      });
+
+      fontWeightSlider.addEventListener("input", (event) => {
+        applyStyleToElement("fontWeight", event.target.value);
+        fontWeightValue.textContent = event.target.value;
+      });
+
+      document.getElementById("italic-btn").addEventListener("click", () => {
+        if (selectedElement) {
+          const isItalic = selectedElement.style.fontStyle === "italic";
+          applyStyleToElement("fontStyle", isItalic ? "normal" : "italic");
+          document
+            .getElementById("italic-btn")
+            .classList.toggle("active", !isItalic);
+        }
+      });
+
+      document.getElementById("underline-btn").addEventListener("click", () => {
+        if (selectedElement) {
+          const isUnderlined =
+            selectedElement.style.textDecoration.includes("underline");
+          selectedElement.style.textDecoration = isUnderlined
+            ? selectedElement.style.textDecoration
+                .replace("underline", "")
+                .trim()
+            : selectedElement.style.textDecoration + " underline";
+          document
+            .getElementById("underline-btn")
+            .classList.toggle("active", !isUnderlined);
+          console.log(
+            "Underline state toggled. Current decoration: ",
+            selectedElement.style.textDecoration
+          );
+        }
+      });
+
+      document.getElementById("strike-btn").addEventListener("click", () => {
+        if (selectedElement) {
+          const isStrikethrough =
+            selectedElement.style.textDecoration.includes("line-through");
+          selectedElement.style.textDecoration = isStrikethrough
+            ? selectedElement.style.textDecoration
+                .replace("line-through", "")
+                .trim()
+            : selectedElement.style.textDecoration + " line-through";
+          document
+            .getElementById("strike-btn")
+            .classList.toggle("active", !isStrikethrough);
+          console.log(
+            "Strikethrough state toggled. Current decoration: ",
+            selectedElement.style.textDecoration
+          );
+        }
       });
     </script>
   </body>
